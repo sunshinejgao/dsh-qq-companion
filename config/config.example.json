@@ -1,0 +1,28 @@
+{
+  "_comment": "放到 <QQ_BRIDGE_DIR>/config.json。加群/改端口后必须重启桥接。",
+  "allow": {
+    "private": [],
+    "groups": [<GROUP_ID>]
+  },
+  "ownerQQ": <OWNER_QQ>,
+  "agentPreset": "qq-chat-v2",
+  "consolePort": 3100,
+  "snowluma": { "wsUrl": "ws://127.0.0.1:3001", "accessToken": "" },
+  "role": { "maxInjectChars": 8000 },
+  "socialV2": {
+    "enabled": true,
+    "autoReplyCheckMs": 30000,
+    "agentPreset": "qq-chat-v2",
+    "voice": {
+      "_comment": "没有它，桥接压不动大图/动图，模型只能看到「太大，看不了」",
+      "ffmpegPath": "<ffmpeg.exe 路径>"
+    },
+    "media": {
+      "maxModelBytes": 1048576,
+      "maxLongEdge": 1280,
+      "gifFrames": 5,
+      "gifTile": 2,
+      "normalize": true
+    }
+  }
+}

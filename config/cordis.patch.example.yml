@@ -1,0 +1,22 @@
+# 追加到 DSH profile 的 cordis.patch.yml
+# ⚠️ 故意放在 `# === qq-bridge MCP BEGIN/END ===` 区块【之外】：
+#    那段会被 qq-bridge 的 scripts/setup-dsh.mjs 整体替换，放里面会被冲掉。
+
+- insert:
+    - id: mcp-diary
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: diary
+        transport: stdio
+        command: node
+        args:
+          - '<repo>/src/mcp-diary.js'
+        toolCallTimeoutMs: 430000
+        env:
+          QQ_BRIDGE_DIR: '<QQ_BRIDGE_DIR>'
+          DSH_EXE: '<DSH_EXE>'
+          PY_CORE: '<PY_CORE>'
+          PY_RVC: '<PY_RVC>'
+          FFMPEG: '<FFMPEG>'
+          COVER_DIR: '<COVER_DIR>'
+          DEFAULT_GROUP: '<GROUP_ID>'

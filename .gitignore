@@ -1,0 +1,16 @@
+node_modules/
+.env
+*.log
+work/
+covers/
+data/diary/*.md
+data/diary/.published-*
+voice-models/
+vendor/**/assets/
+*.pth
+*.index
+*.wav
+*.mp3
+!docs/**/*.mp3
+.DS_Store
+Thumbs.db
