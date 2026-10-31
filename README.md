@@ -59,6 +59,18 @@ QQ 群消息
 | 曲库下载 | 洛雪音乐（LX Music）+ CDP 自动化 | 客户端闭源，脚本 MIT |
 | 感情顾问 | [狗头军师](https://github.com/shengjidaguai-china/goutoujunshi) | MIT（`vendor/goutoujunshi/`） |
 
+## 可选扩展
+
+| 想加什么 | 怎么做 | 谁维护 |
+|---|---|---|
+| **刷 B 站 + 写日报** | 装 npm 包 [`dsh-bili-scroll`](https://www.npmjs.com/package/dsh-bili-scroll)，在 profile 里加一段配置 | 第三方插件，**不在本仓库** |
+| **只发文字/图片消息** | 直接用 qq-bridge 自带的 `qq_send_message` 等工具 | qq-bridge |
+| **加一个新人格** | 复制 `roles/肥嘟嘟.md` 改，改 `state/current-role.json` 指过去 | 本仓库，热生效不用重启 |
+
+B 站那套工具（`bili_search` / `bili_subtitle` / `bili_reply` …）的接入步骤、配置项和踩坑记录在 [`docs/EXTENSIONS.md`](docs/EXTENSIONS.md)。
+
+> 一句话分工：**qq-bridge 负责"怎么发"，本仓库负责"发什么"**——文字消息用前者就够了，语音和翻唱才需要后者。
+
 ## 快速开始
 
 > 完整步骤见 [`docs/INSTALL.md`](docs/INSTALL.md)。这里只给顺序。
