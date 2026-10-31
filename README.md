@@ -85,6 +85,38 @@ B 站那套工具（`bili_search` / `bili_subtitle` / `bili_reply` …）的接�
 
 > 完整步骤见 [`docs/INSTALL.md`](docs/INSTALL.md)。这里只给顺序。
 
+### 懒人版：让 AI 帮你装
+
+这套东西的部署步骤多、依赖杂（两个 Python 环境、一个要编译的 fairseq、几个外部组件），**很适合丢给你的 AI 助手做**。把下面整段复制给它（Cursor / Copilot / Claude / Codex 都行），再把仓库目录告诉它：
+
+```text
+帮我在这台 Windows 机器上部署 dsh-qq-companion（仓库根目录：<填绝对路径>）。
+
+按这个顺序做，每步做完告诉我结果再往下：
+1. 先读 docs/INSTALL.md 和 docs/LIMITS.md，列出需要我人工准备的东西
+   （SnowLuma、qq-bridge、DSH、RVC 模型、豆包凭据），先别动手
+2. 我来准备上面的东西，准备好了你说一声继续
+3. 跑 install/check-prereqs.ps1，缺什么就告诉我装什么，不要自己乱装
+4. 没有 .env 就从 .env.example 复制，逐项问我真实路径，别猜
+5. 依次跑 install/setup-python.ps1、install/install.ps1、install/register-tasks.ps1
+6. 跑 node tests/smoke.mjs，把失败项列出来，逐条给我修法和原因
+
+硬规则：
+- 绝对不要尝试自动安装或启动 SnowLuma，它的 EULA 禁止自动化部署，只能我自己手动开
+- 不要替我把 QQ 号、群号、token、密钥写进任何会进 git 的文件
+- 每条命令失败后先解释根因，不要连续重试同一个失败命令
+- 改 config.json / profile 配置前先备份
+- 这个项目音频处理很慢（一首歌 20 分钟），别因为我"等太久"就杀掉进程
+```
+
+**它最可能卡住的三处**（提前知道能省时间）：
+
+| 卡点 | 原因 |
+|---|---|
+| fairseq 编译 | Windows 上要 VS Build Tools，`setup-python.ps1` 只能提示不会替你装 |
+| SnowLuma | AI 装不了、也启动不了，必须你手动双击 `launcher.bat` |
+| RVC 模型 | 版权文件，仓库里没有，得自己放 `voice-models/<名字>/` |
+
 ```powershell
 # 0. 前置：装好 SnowLuma、qq-bridge、DeepSeek Harness、Python 3.10、ffmpeg
 # 1. 配置
