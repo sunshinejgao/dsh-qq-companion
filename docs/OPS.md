@@ -114,7 +114,7 @@ node src/tools/diary.mjs --publish-only --day 2026-10-29
 | 项 | 作用 | 建议 |
 |---|---|---|
 | `voice` | 豆包音色 id | 女声甜一点的：`zh_female_tianmeixiaoyuan_uranus_bigtts` |
-| `speed` | 语速系数 | 0.9~1.05 |
+| `speed` | 语速系数 | 0.9–1.05 |
 | `emotion` | 情感标签 | `happy` / `sad`（其余会被忽略） |
 | `rvcPitch` | RVC 半音偏移 | 0；音色偏男声时可 +2~+4 |
 
@@ -125,7 +125,7 @@ node src/tools/diary.mjs --publish-only --day 2026-10-29
 | `f0` | `rmvpe` | 比 `harvest` 稳，破音少 |
 | `protect` | `0.9` | 保护清辅音，防吞字 |
 | `index_rate` | `0.45` | 检索强度；太高会毛刺，太低会不像 |
-| `filter_radius` | `3` | 音高中值滤波，5~7 更平滑但会糊 |
+| `filter_radius` | `3` | 音高中值滤波，5–7 更平滑但会糊 |
 | `pitch` | `0` | 音域不匹配时 ±2 |
 
 ### 修复（`src/repair_audio.py`）

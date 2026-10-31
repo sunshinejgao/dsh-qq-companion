@@ -10,7 +10,7 @@
 | **Python 3.10** | RVC 依赖对 3.11+ 支持不好（fairseq 编译会挂）。建议用 `uv` 装 |
 | **Node.js 20+** | qq-bridge 与本节所有 `.mjs` 脚本 |
 | **ffmpeg** | 音频处理；建议单独放一个固定目录，不要依赖 venv 里的 |
-| **约 15 GB 磁盘** | 模型（RVC 音色 50~100 MB/个，hubert 180 MB，rmvpe 172 MB）+ 音频中间文件 |
+| **约 15 GB 磁盘** | 模型（RVC 音色 50–100 MB/个，hubert 180 MB，rmvpe 172 MB）+ 音频中间文件 |
 | **DeepSeek Harness** | Agent 运行时 |
 | **qq-bridge** | 消息桥接（MIT，自行获取部署） |
 | **SnowLuma** | QQ 网关（**闭源，必须官网自行获取；其 EULA 禁止自动化部署，本仓库不打包也不代为启动**） |
@@ -96,7 +96,7 @@ powershell -ExecutionPolicy Bypass -File install/setup-python.ps1
 做两件事：
 
 1. `PY_CORE` 环境：装 `edge-tts`、`soundfile`、`numpy`、`scipy`
-2. `PY_RVC` 环境：装 `torch`（CPU 版即可）、`rvc-python`，并**编译 fairseq 0.12.2**（Windows 上需要 VS Build Tools，约 10~20 分钟）
+2. `PY_RVC` 环境：装 `torch`（CPU 版即可）、`rvc-python`，并**编译 fairseq 0.12.2**（Windows 上需要 VS Build Tools，约 10–20 分钟）
 
 > fairseq 在 Windows 上编译常见三个坑，`setup-python.ps1` 会自动打补丁：
 > - `torch/utils/cpp_extension.py` 需要 `errors='replace'`
@@ -110,8 +110,8 @@ powershell -ExecutionPolicy Bypass -File install/setup-python.ps1
 ```text
 voice-models/
   ├─ naxida/          ← 说话+唱歌用的音色
-  │   ├─ xxx.pth      （50~100 MB）
-  │   └─ xxx.index    （可选，20~100 MB，检索增强）
+  │   ├─ xxx.pth      （50–100 MB）
+  │   └─ xxx.index    （可选，20–100 MB，检索增强）
   └─ other-voice/
       └─ ...
 ```
