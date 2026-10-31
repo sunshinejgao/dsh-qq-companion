@@ -131,6 +131,17 @@ dsh-qq-companion/
 └─ tests/smoke.mjs            自检：配置、端口、MCP、TTS、RVC
 ```
 
+## 交接
+
+如果你是把项目**接手过来维护**（人或 AI agent 都算），先读 [`docs/HANDOVER.md`](docs/HANDOVER.md)：
+
+- 系统全貌与端口、关键路径
+- 这个项目是怎么长出来的（每个坑的根因和解法）
+- 被否决的方案（别再走一遍）
+- 已知问题优先级、不可动的边界
+- Windows 环境专属的 8 个坑
+- 接手第一件事的 checklist
+
 ## 已知限制
 
 - **SnowLuma 不能自动部署**：其 EULA 禁止把本体并入安装包或通过脚本启动，只能人工安装与启动。
