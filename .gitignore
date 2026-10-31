@@ -11,6 +11,7 @@ vendor/**/assets/
 *.index
 *.wav
 *.mp3
-!docs/**/*.mp3
+!docs/audio/*.mp3
+!docs/audio/*.mp3
 .DS_Store
 Thumbs.db
